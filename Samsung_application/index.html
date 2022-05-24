@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>(주)삼성전자 신입사원 공채 지원 페이지</title>
+        <meta charset="utf-8"/>
+        <meta name="author" content="김대각"/>
+        <meta name="keywords" content="입력폼,form,input,인터렉션/">
+        <meta name="description" content="입력폼 연습"/>
+        <link href="favicon.ico" rel="icon shortcut"/>
+
+        <style>
+            #apple
+            {
+                color: rgb(0, 17, 255);
+            }
+            .red
+            {
+                color: red;
+            }
+            label, input[type=text], input[type=password], input[type=email],input[type=date], input[type=range], input[type=file], textarea, select
+            {
+                display: block;
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+            input:focus, textarea:focus
+            {
+                background-color: aqua;
+            }
+            .mb0
+            {
+                margin: 0;
+            }
+            textarea
+            {
+                min-height: 200px;
+                min-width: 500px;
+                resize: vertical;
+            }
+
+            #phonebox input
+            {
+                display: inline;
+                width: 70px;
+            }
+
+            #phonebox input:first-of-type
+            {
+                width: 55px;
+            }
+
+            input[type=text],input[type=password], input[type=email],input[type=date],select,textarea
+            {
+                padding: 0.5em 1em;
+                box-sizing: border-box;
+                border: 1px solid #cccccc;
+                border-radius: 4px;
+                box-shadow: 1px 4px 5px rgba(0,0,0,0.5);
+            }
+
+            body
+            {
+                width: 100%;
+                max-width: 600px;
+                margin: auto;
+                padding: 1em;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+        <h1 id="apple">(주)삼성전자 신입사원 공채 지원 페이지</h1>
+        <p>
+            합격 후 합격사실과 다른 사실이 다를 경우 합격이 취소 될 수 있습니다.
+        </p>
+
+        <form action="apply.php" method="get">
+            <label>
+                Name<span class="red">*</span>
+                <input type="text" name="username" maxlength="40" required/>
+            </label>
+
+            <label>
+                ID<span class="red">*</span>
+                <input type="text" name="userid" maxlength="20" required/>
+            </label>
+
+            <label>
+                PW<span class="red">*</span>
+                <input type="password" name="userpw" maxlength="20" required/>
+            </label>
+
+            <label>
+                국적
+                <select name="nation">
+                    <option value="">선택하세요</option>
+                    <optgroup label="Asia">
+                        <option value="kor">대한민국</option>
+                        <option value="jap">일본</option>
+                        <option value="chi">중국</option>
+                        <option value="vie">베트남</option>
+                        <option value="tai">대만</option>
+                    <optgroup label="Europe">
+                        <option value="eng">영국</option>
+                        <option value="fra">프랑스</option>
+                        <option value="ger">독일</option>
+                        <option value="swi">스위스</option>
+                        <option value="swe">스웨덴</option>
+                    <optgroup label="South America">
+                        <option value="bra">브라질</option>
+                        <option value="chl">칠레</option>
+                        <option value="arh">아르헨티나</option>
+                        <option value="mex">멕시코</option>
+                        <option value="urg">우루과이</option>
+                    <optgroup label="South America">
+                        <option value="usa">미국</option>
+                        <option value="can">캐나다</option>
+                    <optgroup label="Africa">
+                        <option value="cot">코트디부아르</option>
+                        <option value="ken">케냐</option>
+                        <option value="kon">콩고</option>
+                        <option value="gan">가나</option>
+                        <option value="sud">수단</option>
+                    </optgroup>
+                </select>
+            </label>
+
+            <label id="phonebox">
+                Phone number<span class="red">*</span>
+                <br/>
+                <input type="text" value="010" name="userpn1" maxlength="20" disabled/>
+                -
+                <input type="text" name="userpn2" maxlength="20" required/>
+                -
+                <input type="text" name="userpn3" maxlength="20" required/>
+            </label>
+
+            <label>
+                Home address<span class="red">*</span>
+                <input type="text" name="postnum" placeholder="우편번호" required/>
+                <input type="text" name="addr1" placeholder="도로명주소" required/>
+                <input type="text" name="addr2" placeholder="상세주소"/>
+              
+            </label>
+
+            <label>
+                E-mail
+                <input type="email" name="user_e-mail" />
+            </label>
+
+            <label>
+                Certificate
+                <div>
+                    <input type="date" name="user_cert_date" />
+                    <input type="text" name="certification" placeholder="발급기관" />
+                    <input type="text" name="certname" />
+                </div>
+                <div>
+                    <input type="date" name="user_cert_date" />
+                    <input type="text" name="certification" placeholder="발급기관" />
+                    <input type="text" name="certname" />
+                </div>
+                <div>
+                    <input type="date" name="user_cert_date" />
+                    <input type="text" name="certification" placeholder="발급기관" />
+                    <input type="text" name="certname" />
+                </div>
+            </label>
+                
+
+            <label>
+                최종학력
+                <div>
+                    <input type="date" name="graddate" />
+                    <select name="gradDegree">
+                        <option value="">선택하세요</option>
+                        <option value="H">고등학교</option>
+                        <option value="B">대학교</option>
+                        <option value="M">대학원(석사)</option>
+                        <option value="D">대학원(박사)</option>
+                    </select>
+                    <input type="text" name="gradschool" placeholder="학교명" />
+                    <input type="text" name="gradmajor" placeholder="전공"/>
+                </div>
+            </label>
+
+            <div>
+                Support department
+                
+                    <label class="mb0"><input type="radio" name="part" value="semicon"/>반도체사업부</label>
+                    <label class="mb0"><input type="radio" name="part" value="dev"/>기획/개발부</label>
+                    <label class="mb0"><input type="radio" name="part" value="sell"/>영업부</label>
+                    <label class="mb0"><input type="radio" name="part" value="marketing"/>마케팅기획부</label>
+            </div>
+
+            <div>
+                Hobbies
+                <label class="mb0">
+                    <input type="checkbox" name="hobby" value="hike" checked/>등산
+                </label>
+                <label class="mb0">
+                    <input type="checkbox" name="hobby" value="balling"/>볼링
+                </label>
+                <label class="mb0">
+                    <input type="checkbox" name="hobby" value="reading"/>독서
+                </label>
+                <label class="mb0">
+                    <input type="checkbox" name="hobby" value="movie"/>영화
+                </label>
+            </div>
+
+            <div>
+                희망연봉
+                <label>
+                    <input type="range" name="money" min="2600" max="3500" step="100" value="2600"/>
+                </label>
+                <label>
+                    포트폴리오
+                    <input type="file" name="portfolio" />
+                </label>
+
+                <label>
+                    주력 사용 언어
+                    <input type="text" name="lang" list="langList"/>
+                    <datalist id="langList">
+                        <option>JAVA</option>
+                        <option>C</option>
+                        <option>Pearl</option>
+                        <option>Swift</option>
+                        <option>COBOL</option>
+                        <option>R</option>
+                        <option>Ruby</option>
+                        <option>HTML+CSS</option>
+                        <option>C++</option>
+                        <option>C#</option>
+                        <option>C++</option>
+                        <option>Phyton</option>
+                        <option>Java script</option>
+                    </datalist>
+
+                    <label>
+                        자기소개서
+                        <textarea name="essay" placeholder="500자미만으로 작성하시오" maxlength="500"></textarea>
+                    </label>
+
+                </label>
+                <button type="submit">제출하기</button>
+                <button type="reset">초기화하기</button>
+            </div>
+
+
+
+            <!-- <br/>
+            <br/>
+
+
+            <label>
+            <input type="radio" name="gender" />남자
+            </label>
+            <label>
+            <input type="radio" name="gender" />여자
+            </label>
+
+            <button type="button">추가하기</button>
+            -->
+
+        </form>
+    </body>
+
+</html>
